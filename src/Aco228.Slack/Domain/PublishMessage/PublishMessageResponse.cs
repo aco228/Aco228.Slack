@@ -6,13 +6,8 @@ namespace Aco228.Slack.Domain.PublishMessage;
 
 public class PublishMessageResponse
 {
-    [JsonProperty("ok")]
     public bool ok { get; set; }
-    
-    [JsonProperty("channel")]
     public string channel { get; set; }
-    
-    [JsonProperty("ts")]
     public string ts { get; set; }
 
     public async Task PublishMessage(string message, bool forceSend = true)

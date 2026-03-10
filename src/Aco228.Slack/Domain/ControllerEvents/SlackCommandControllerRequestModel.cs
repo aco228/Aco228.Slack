@@ -1,39 +1,40 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Aco228.Slack.Domain.ControllerEvents;
 
 public class SlackCommandControllerRequestModel
 {
-    [JsonProperty("token")]
+    [JsonPropertyName("token")]
     public string Token { get; set; }
     
-    [JsonProperty("team_id")]
+    [JsonPropertyName("team_id")]
     public string TeamId { get; set; }
     
-    [JsonProperty("channel_id")]
+    [JsonPropertyName("channel_id")]
     public string ChannelId { get; set; }
     
-    [JsonProperty("channel_name")]
+    [JsonPropertyName("channel_name")]
     public string ChannelName { get; set; }
     
-    [JsonProperty("user_id")]
+    [JsonPropertyName("user_id")]
     public string UserId { get; set; }
     
-    [JsonProperty("user_name")]
+    [JsonPropertyName("user_name")]
     public string Username { get; set; }
     
-    [JsonProperty("command")]
+    [JsonPropertyName("command")]
     public string Command { get; set; }
     
-    [JsonProperty("text")]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
     
-    [JsonProperty("api_app_id")]
+    [JsonPropertyName("api_app_id")]
     public string ApiAppId { get; set; }
     
-    [JsonProperty("response_url")]
+    [JsonPropertyName("response_url")]
     public string ResponseUrl { get; set; }
     
-    [JsonProperty("trigger_id")]
+    [JsonPropertyName("trigger_id")]
     public string TriggerId { get; set; }
 }

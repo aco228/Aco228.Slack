@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿
+using System.Text.Json.Serialization;
 
 namespace Aco228.Slack.Domain.Channels;
 
@@ -10,16 +11,16 @@ public class ConversationListRequest
     [JsonIgnore]
     public List<SlackChannelType> Types { get; set; } = new() { SlackChannelType.public_channel, SlackChannelType.private_channel };
     
-    [JsonProperty("limit")]
+    [JsonPropertyName("limit")]
     public int Limit { get; set; } = 100;
     
-    [JsonProperty("cursor", NullValueHandling = NullValueHandling.Ignore)]
-    public string Cursor { get; set; }
+    [JsonPropertyName("cursor")]
+    public string? Cursor { get; set; }
 
-    [JsonProperty("exclude_archived")] 
+    [JsonPropertyName("exclude_archived")] 
     public string  Arg_ExcludeArchived => ExcludeArchived ? "true" : "false";
 
-    [JsonProperty("types")]
+    [JsonPropertyName("types")]
     public string Arg_Types
     {
         get

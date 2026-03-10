@@ -1,22 +1,23 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Aco228.Slack.Domain.Channels;
 
 public class SlackMessageResponse
 {
-    [JsonProperty("bot_id")]
+    [JsonPropertyName("bot_id")]
     public string BotId { get; set; }
     
-    [JsonProperty("type")]
+    [JsonPropertyName("type")]
     public string Type { get; set; }
     
-    [JsonProperty("text")]
+    [JsonPropertyName("text")]
     public string Text { get; set; }
     
-    [JsonProperty("ts")]
+    [JsonPropertyName("ts")]
     public string MessageThread { get; set; }
     
-    [JsonProperty("user")]
+    [JsonPropertyName("user")]
     public string User { get; set; }
 
     public DateTime? GetDate()

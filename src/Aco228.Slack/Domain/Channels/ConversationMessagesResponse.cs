@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Aco228.Slack.Domain.Channels;
 
 public class ConversationMessagesResponse : SlackHasMoreResponse
 {
-    [JsonProperty("messages")]
+    [JsonPropertyName("messages")]
     public List<SlackMessageResponse> Messages { get; set; }
 }

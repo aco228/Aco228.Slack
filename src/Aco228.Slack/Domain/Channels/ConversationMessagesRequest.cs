@@ -1,18 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Aco228.Slack.Domain.Channels;
 
 public class ConversationMessagesRequest
 {
-    [JsonProperty("limit")]
+    [JsonPropertyName("limit")]
     public int Limit { get; set; } = 100;
     
-    [JsonProperty("channel")]
+    [JsonPropertyName("channel")]
     public string Channel { get; set; }
     
-    [JsonProperty("latest", NullValueHandling = NullValueHandling.Ignore)]
+    [JsonPropertyName("latest")]
     public string LatestMessageThread { get; set; }
     
-    [JsonProperty("oldest", NullValueHandling = NullValueHandling.Ignore)]
+    [JsonPropertyName("oldest")]
     public string OldestMessageThread { get; set; }
 }

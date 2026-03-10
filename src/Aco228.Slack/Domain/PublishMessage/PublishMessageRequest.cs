@@ -1,27 +1,28 @@
-﻿using Aco228.Slack.Domain.Blocks.Core;
+﻿using System.Text.Json.Serialization;
+using Aco228.Slack.Domain.Blocks.Core;
 using Newtonsoft.Json;
 
 namespace Aco228.Slack.Domain.PublishMessage;
 
 public record PublishMessageRequest
 {
-    [JsonProperty("channel", NullValueHandling = NullValueHandling.Ignore)]
+    [JsonPropertyName("channel")]
     public string ChannelId { get; set; }
     
-    [JsonProperty("thread_ts", NullValueHandling = NullValueHandling.Ignore)]
+    [JsonPropertyName("thread_ts")]
     public string Thread { get; set; }
     
-    [JsonProperty("text")]
+    [JsonPropertyName("text")]
     public string Message { get; set; }
     
-    [JsonProperty("link_names")]
+    [JsonPropertyName("link_names")]
     public string IncludeMentions { get; set; } = "1";
     
-    [JsonProperty("unfurl_links")]
+    [JsonPropertyName("unfurl_links")]
     public bool UnfurLinks { get; set; } = false;
     
-    [JsonProperty("blocks", NullValueHandling = NullValueHandling.Ignore)]
+    [JsonPropertyName("blocks")]
     public List<BlockBase> Blocks { get; set; }
 
-    [JsonIgnore] public bool ForceSend { get; set; } = false;
+    [System.Text.Json.Serialization.JsonIgnore] public bool ForceSend { get; set; } = false;
 }
