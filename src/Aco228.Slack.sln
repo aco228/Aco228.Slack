@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aco228.Slack", "Aco228.Slack\Aco228.Slack.csproj", "{C9533BAC-0F90-48A9-B518-5551C22AD109}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{D708AC59-29C1-4421-BD64-390F484FF223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aco228.Common", "..\..\Aco228.Common\src\Aco228.Common\Aco228.Common.csproj", "{36AA31AD-28D0-473E-AA6C-98C2CDFC082E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aco228.WService", "..\..\Aco228.WService\src\Aco228.WService\Aco228.WService\Aco228.WService.csproj", "{4E7BF000-DD07-40B0-8B64-AE71684FB599}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9533BAC-0F90-48A9-B518-5551C22AD109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9533BAC-0F90-48A9-B518-5551C22AD109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9533BAC-0F90-48A9-B518-5551C22AD109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9533BAC-0F90-48A9-B518-5551C22AD109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36AA31AD-28D0-473E-AA6C-98C2CDFC082E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36AA31AD-28D0-473E-AA6C-98C2CDFC082E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36AA31AD-28D0-473E-AA6C-98C2CDFC082E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36AA31AD-28D0-473E-AA6C-98C2CDFC082E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7BF000-DD07-40B0-8B64-AE71684FB599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7BF000-DD07-40B0-8B64-AE71684FB599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7BF000-DD07-40B0-8B64-AE71684FB599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7BF000-DD07-40B0-8B64-AE71684FB599}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{36AA31AD-28D0-473E-AA6C-98C2CDFC082E} = {D708AC59-29C1-4421-BD64-390F484FF223}
+		{4E7BF000-DD07-40B0-8B64-AE71684FB599} = {D708AC59-29C1-4421-BD64-390F484FF223}
+	EndGlobalSection
+EndGlobal
