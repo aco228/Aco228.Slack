@@ -8,4 +8,7 @@ public interface ISlackUserApiService : ISlackApiService
 {
     [ApiGet("users.profile.get?user={user}")]
     public Task<SlackUserResponse?> GetUserInformations(string user);
+    
+    [ApiGet("users.list")]
+    public Task<string?> GetUserList();
 }
