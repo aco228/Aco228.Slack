@@ -1,6 +1,5 @@
 ﻿using System.Text.Json.Serialization;
 using Aco228.Slack.Domain.Blocks.Core;
-using Newtonsoft.Json;
 
 namespace Aco228.Slack.Domain.PublishMessage;
 
