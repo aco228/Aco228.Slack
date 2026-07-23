@@ -10,6 +10,7 @@ public interface ISlackMessagingClient : ITransient
 {
     Task<PublishMessageResponse> PublishMessage(PublishMessageRequest request);
     Task<PublishMessageResponse> PublishMessage(string channel, string text, bool forceSend = false);
+    Task PublishNestedMessage(string? channel, string text, string nestedText, bool forceSend = false);
 }
 
 public class SlackMessagingClient : ISlackMessagingClient
@@ -45,6 +46,15 @@ public class SlackMessagingClient : ISlackMessagingClient
             Message = text,
             ForceSend = forceSend,
         });
+    }
+
+    public async Task PublishNestedMessage(string? channel, string text, string nestedText, bool forceSend = false)
+    {
+        if (string.IsNullOrEmpty(channel))
+            return;
+        
+        var message = await PublishMessage(channel, text, forceSend);
+        await message.PublishMessage(nestedText);
     }
 
     public static void RemoveOldHashes()
