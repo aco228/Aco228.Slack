@@ -9,7 +9,7 @@ namespace Aco228.Slack.Services;
 public interface ISlackMessagingClient : ITransient
 {
     Task<PublishMessageResponse> PublishMessage(PublishMessageRequest request);
-    Task<PublishMessageResponse> PublishMessage(string channel, string text, bool forceSend = false);
+    Task<PublishMessageResponse?> PublishMessage(string? channel, string text, bool forceSend = false);
     Task PublishNestedMessage(string? channel, string text, string nestedText, bool forceSend = false);
 }
 
@@ -38,8 +38,9 @@ public class SlackMessagingClient : ISlackMessagingClient
         return _httpClient.PublishMessage(request);
     }
 
-    public Task<PublishMessageResponse> PublishMessage(string channel, string text, bool forceSend = false)
+    public Task<PublishMessageResponse?> PublishMessage(string? channel, string text, bool forceSend = false)
     {
+        if (string.IsNullOrEmpty(channel)) return null;
         return PublishMessage(new()
         {
             ChannelId = channel,
